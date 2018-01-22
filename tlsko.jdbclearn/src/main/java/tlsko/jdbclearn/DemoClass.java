@@ -17,14 +17,15 @@ public class DemoClass {
 				//view the data from database
 				//String query ="select * from tbl_student";
 				//Fetch data from Database
-				int studentID = 6;
-				String studentName = "Teja";
-				int studentAge=23;
+				int studentID = 10;
+				String studentName = "siri";
+				int studentAge=32;
 				//String query = "insert into tbl_student values (4,'Vinny',23)";
 				//String query = "insert into tbl_student values (" + studentID + ",'" + studentName + ",'" + studentAge +"')";
 				//String query = "insert into tbl_student values (" + studentID + ",'" + studentName + ",'" + studentAge + "')";
 				String query = "insert into tbl_student values (?,?,?)"; 
-				Class.forName("com.mysql.jdbc.Driver");
+				//<driver> com.mysql.cj.jdbc.Driver</driver>
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con = DriverManager.getConnection(url,uname,pass);
 				//Statement st = con.createStatement();
 				PreparedStatement st = con.prepareStatement(query);

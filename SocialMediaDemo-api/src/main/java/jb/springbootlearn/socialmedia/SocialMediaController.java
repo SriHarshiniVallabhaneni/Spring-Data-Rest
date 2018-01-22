@@ -29,7 +29,16 @@ public class SocialMediaController {
 	@RequestMapping(method=RequestMethod.POST, value="/topics")
 	public void addSM(@RequestBody SocialMedia socialmedia) {
 		socialmediaservice.addSM(socialmedia);
-		
-		
+		}
+	
+	
+	@RequestMapping(method=RequestMethod.PUT, value="/topics/{appType}")
+	public void putSM(@RequestBody SocialMedia socialmedia,@PathVariable String appType) {
+		socialmediaservice.putSM(appType,socialmedia);
 	}
+	@RequestMapping(method=RequestMethod.DELETE, value="/topics/{appType}")
+	public void deleteSM(@RequestBody SocialMedia socialmedia,@PathVariable String appType) {
+		socialmediaservice.deleteSM(appType,socialmedia);
+	}
+	
 }

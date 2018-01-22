@@ -25,5 +25,30 @@ public class SocialMediaService {
 		topics.add(socialmedia);
 		
 	}
+	
+	public void putSM(String appType, SocialMedia socialmedia) {
+			for(int i=0; i<topics.size();i++)
+			{
+				SocialMedia t=topics.get(i);
+				if(t.getAppType().equals(appType))
+				{
+				   	topics.set(i, socialmedia);
+					return;
+				}
+			}
+		
+	}
+	public void deleteSM(String appType, SocialMedia socialmedia) {
+		for(int i=0; i<topics.size();i++)
+		{
+			SocialMedia s=topics.get(i);
+			if(s.getAppType().equals(appType))
+			{
+				topics.remove(i);
+				return;
+			}
+		}
+		
+	}	
 
 } 
